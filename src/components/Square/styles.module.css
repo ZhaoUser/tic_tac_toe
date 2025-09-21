@@ -1,0 +1,6 @@
+.button{
+    min-width: 64;
+    min-height: 64;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
