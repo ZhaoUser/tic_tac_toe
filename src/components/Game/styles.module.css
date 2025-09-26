@@ -1,8 +1,76 @@
-.box{
+
+.gameLayout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.box {
     text-align: center;
 }
 
 .element{
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+.movesPanel {
+    min-width: 220px;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .gameLayout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .movesPanel {
+        max-width: 100%;
+        min-width: unset;
+    }
+}
+
+.startbtn {
+    background-color: #8ebab4;
+    color: #2b835d;
+    border: 2px solid #2b835d;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+.startbtn:hover {
+    background-color: #8ebab4;
+    color: #2b835d;
+    border-color: #2b835d;
+}
+
+.winnertext {
+      color: #34a59d;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 6px #6d6d6d;
+}
+
+.backmovebtn {
+    background-color: #8ebab4;
+    color: #34a59d;
+    border: 2px solid #2b835d;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+.backmovebtn:hover {
+    background-color: #8ebab4;
+    color: #34a59d;
+    border-color: #2b835d;
 }

@@ -1,20 +1,9 @@
-
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
+import styles from './styles.module.css'
 
 export default function Square({ value, onSquareClick }) {
   return (
-    <Button
-      variant="outlined"
-      onClick={onSquareClick}
-      sx={{
-        minWidth: 64,
-        minHeight: 64,
-        fontSize: '1.5rem',
-        fontWeight: 'bold',
-        mx: 0.5,
-        my: 0.5,
-      }}
-    >
+    <Button variant="outlined" onClick={onSquareClick} className = {styles.button}>
       {value}
     </Button>
   );

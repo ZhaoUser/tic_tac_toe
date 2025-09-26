@@ -25,44 +25,31 @@ export default function App() {
       <CssBaseline />
 
       {/* Botão de alternar tema no canto */}
-      <div style={{ position: "absolute", top: 20, right: 20 }}>
+      <div className="theme-toggle-btn">
         <IconButton onClick={toggleTheme} color="inherit">
           {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
       </div>
 
       {/* Jogo */}
-      <Container maxWidth="sm" sx={{ mt: 4 }}>
-        <Typography 
-            variant="h3"
-            align="center"
-            gutterBottom
-            sx={{
-              fontWeight: "bold",
-              background: "linear-gradient(45deg, #00ff7bff, #ffff00ff)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
+      <Container maxWidth="sm" className="container-custom">
+        <Typography
+          variant="h3"
+          gutterBottom
+          className="gradient-title"
+        >
           Tic Tac Toe
         </Typography>
-        <Game />
+        <div className="game-wrapper">
+          <Game />
+        </div>
       </Container>
 
       {/* Rodapé */}
-      <Typography
-        variant="body2"
-        align="center"
-        sx={{
-          position: "fixed",
-          bottom: 10,
-          left: 0,
-          right: 0,
-          color: "text.secondary",
-        }}
-      >
-        Projeto TicTacToe criado por Sammy Zhao
+        <Typography variant = "body2" className = "footer">
+        Projeto TicTacToe
       </Typography>
+
     </ThemeProvider>
   );
 }

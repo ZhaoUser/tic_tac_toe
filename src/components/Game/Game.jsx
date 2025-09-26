@@ -29,7 +29,12 @@ export default function Game() {
     const description = move ? `Voltar para movimento #${move}` : 'Início do jogo';
     return (
       <li key={move}>
-        <Button onClick={() => jumpTo(move)} variant="outlined" sx={{ mb: 1 }}>
+        <Button
+          onClick={() => jumpTo(move)}
+          variant="outlined"
+          sx={{ mb: 1 }}
+          className={move === 0 ? styles.startbtn : styles.backmovebtn}
+        >
           {description}
         </Button>
       </li>
@@ -37,17 +42,25 @@ export default function Game() {
   });
 
   return (
-    <Box className = {styles.box}>
-      <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      <Typography variant="h6" sx={{ mt: 2 }}>
-        {winner
-          ? `Ganhador: ${winner}`
-          : isDraw
-          ? 'Empate!'
-          : `Próximo jogador: ${xIsNext ? 'X' : 'O'}`}
-      </Typography>
-      <ol className = {styles.element}>{moves}</ol>
-    </Box>
+    <div className={styles.gameLayout}>
+      <Box className={styles.box}>
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        <Typography
+          variant="h6"
+          sx={{ mt: 2 }}
+          className={winner ? styles.winnertext : ''}
+        >
+          {winner
+            ? `Ganhador: ${winner}`
+            : isDraw
+            ? 'Empate!'
+            : `Próximo jogador: ${xIsNext ? 'X' : 'O'}`}
+        </Typography>
+      </Box>
+      <div className={styles.movesPanel}>
+        <ol className={styles.element}>{moves}</ol>
+      </div>
+    </div>
   );
 }
 
